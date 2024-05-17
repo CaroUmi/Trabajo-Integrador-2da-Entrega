@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary-color: rgba(255, 255, 255, 0.87);
   --secondary-color: royalblue;
   --tercery-color: #242424;
@@ -27,7 +27,115 @@
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+} */
+:root {
+	/* FUENTES */
+	--fuente-principal: "Lato", sans-serif;
+	--fuente-secundaria: "Roboto", sans-serif;
+	/* COLORES */
+	--color-p-claro: #999;
+	--color-p-oscuro: #666;
+	--color-rosa: #c87065;
+	--color-beige: #c8a165;
+	--color-blanco: #ffffff;
+	--color-gris-bg: #f6f6f6;
+	--color-gris-bg-footer: #EEEEEE;
+	--color-transparencia: #6666667d;
+	/* SOMBRAS */
+	--box-shadow: 1px 8px 15px rgba(0, 0, 0, 0.12);
 }
+
+/*  ?==================== #ESTILOS GENERALES ====================  */
+/* html {
+	font-size: 13px;
+} */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--fuente-principal);
+	color: var(--color-p-claro);
+	background-color: var(--color-gris-bg);
+	position: relative;
+}
+
+p {
+	font-size: 14px;
+	color: var(--color-p-claro);
+}
+
+/* ---------- ENCABEZADOS ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--fuente-principal);
+	font-weight: 900;
+	color: var(--color-p-oscuro);
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 22px;
+	font-weight: 900;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+/* ---------- LINKS ---------- */
+a {
+	text-decoration: none;
+}
+
+/* ---------- LISTAS ---------- */
+ul li {
+	list-style: none;
+}
+
+/* ---------- BOTONES ---------- */
+.btn-principal {
+	background-color: var(--color-rosa);
+	color: var(--color-blanco);
+	text-transform: uppercase;
+	padding: 0.6rem 2rem;
+	margin: 0.5rem 0;
+	border: 0;
+	border-radius: 3px;
+}
+
+.btn-principal:hover {
+	background-color: var(--color-beige);
+}
+
+/* ---------- INPUT ---------- */
+input {
+	width: 100%;
+	padding: .5rem .5rem;
+	margin: .2rem 0;
+	border: none;
+	border-bottom: 3px solid var(--color-rosa);
+}
+
+input:focus {
+	outline: none;
+}
+
+/*---------------------- termina estilos generales ----------------------- */
 
 .main-container {
   display: flex;

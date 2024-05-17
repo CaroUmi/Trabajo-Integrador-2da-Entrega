@@ -14,7 +14,7 @@ import AdminGuard from './services/guard/AdminGuard';
 import NotFound from './pages/not-found/NotFound';
 
 
-// Clase 44 - 0:13 min visto
+// Clase 45 - 1:06 min visto
 
 
 function App() {
