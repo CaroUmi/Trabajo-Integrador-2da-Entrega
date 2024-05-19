@@ -12,6 +12,7 @@ import ProductDetail from './pages/product-detail/ProductDetail';
 import { Route, Routes } from 'react-router-dom';
 import AdminGuard from './services/guard/AdminGuard';
 import NotFound from './pages/not-found/NotFound';
+import OrderSidebar from './layout/order-sidebar/OrderSidebar';
 
 
 // Clase 45 - 1:06 min visto
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <Header />
+      <OrderSidebar />
       <main className="main-container">
         <Routes>
           <Route path="/" element={<Home />} />
