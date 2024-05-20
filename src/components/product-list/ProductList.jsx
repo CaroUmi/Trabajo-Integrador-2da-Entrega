@@ -18,7 +18,7 @@ export default function ProductList() {
       const response = await axios.get(`${URL}/products`);
       const productsAPI = response.data;
       setProducts(productsAPI)
-      console.log(productsAPI)
+      // console.log(productsAPI)
     } catch (error) {
       console.log(error)
     }

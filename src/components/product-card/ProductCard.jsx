@@ -2,9 +2,13 @@ import "./ProductCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faCartPlus, faMagnifyingGlass, faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
+import { useOrder } from "../../context/OrderContext";
 
 
 export default function ProductCard({ product }) {
+
+  const { addOrderItem } = useOrder();
+
   return (
     <article className="card">
       <div className="card-main">
@@ -18,7 +22,7 @@ export default function ProductCard({ product }) {
           <a href="/pages/single-product.html" target="_blank" className=" icon-product ico-central">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </a>
-          <a href="/pages/single-product.html" target="_blank" className="icon-product icon-product">
+          <a onClick={() => addOrderItem(product)} target="_blank" className="icon-product icon-product">
             <FontAwesomeIcon icon={faCartPlus} />
           </a>
         </div>
