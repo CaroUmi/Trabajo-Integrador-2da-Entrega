@@ -1,5 +1,11 @@
 export default function Contacto() {
   return (
-    <div>Contacto</div>
+  
+    <div className="main-container">
+      Contacto
+      </div>
+    
+    
+
   )
 }
