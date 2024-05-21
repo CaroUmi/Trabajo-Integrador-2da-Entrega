@@ -1,7 +1,7 @@
 import './App.css'
 import Header from './layout/heder/Header';
-import Home from './pages/home/Home';
 import Footer from './layout/footer/Footer';
+import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Contacto from './pages/contacto/Contacto';
 import AboutUs from './pages/about-us/AboutUs';
