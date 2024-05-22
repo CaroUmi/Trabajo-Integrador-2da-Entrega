@@ -1,0 +1,60 @@
+.banner-page {
+	background-position: center;
+	background-size: cover;
+	height: 350px;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	padding: 2rem;
+
+	.main-banner-page {
+		width: 1280px;
+		margin: 0 auto;
+
+		.text-banner-page {
+			max-width: 400px;
+			background-color: var(--color-transparencia);
+			padding: 1rem 2rem;
+
+			* {
+				color: var(--color-blanco);
+				padding: .2rem 0;
+			}
+
+			.breadcrumb {
+				a {
+					&:hover {
+						color: var(--color-rosa);
+					}
+				}
+				p {
+					margin-right: .5rem;
+				}
+			}
+		}
+	}
+
+	.breadcrumb {
+		display: flex;
+	}
+}
+
+.banner-about {
+	background-image: url(/assets/images/banner-page-1.jpg);
+}
+
+.banner-contact {
+	background-image: url(/assets/images/banner-page-2.jpg);
+}
+
+.banner-list-products {
+	background-image: url(/assets/images/banner-page-3.jpg);
+}
+
+.banner-registro {
+	background-image: url(/assets/images/banner-page-4.jpg);
+}
+
+.banner-single-product {
+	background-image: url(/assets/images/banner-page-5.jpg);
+}

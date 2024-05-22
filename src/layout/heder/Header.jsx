@@ -4,18 +4,22 @@ import "./Header.css";
 import AdminGuard from "../../services/guard/AdminGuard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faBars } from "@fortawesome/free-solid-svg-icons"
+import { useOrder } from "../../context/OrderContext";
 
 export default function Header() {
   const isAdmin = true;
+  const { toggleSidebarOrder } = useOrder();
 
   return (
     <header className="main-header">
       <nav className="navbar">
         <div className="container-nav">
-          <img className="logo" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/logos/logo-color.png" alt="logo de marca" />
+          <NavLink to="/">
+            <img className="logo" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/logos/logo-color.png" alt="logo de marca" />
+          </NavLink>
           <label className="icon-burger" htmlFor="check-menu">
-          <FontAwesomeIcon icon={faBars} />
-            </label>
+            <FontAwesomeIcon icon={faBars} />
+          </label>
           <input className="nav-checkbox" type="checkbox" id="check-menu" />
           <ul className="nav-list">
 
@@ -32,8 +36,6 @@ export default function Header() {
                 </AdminGuard>
               )
             }
-
-
             <div className="user-data">
               <img className="user-img" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/profile.png" alt="imagen del usuario" />
               <p className="user-name">John Doe</p>
@@ -42,7 +44,7 @@ export default function Header() {
         </div>
         {/* </div> */}
         <div className="nav-cart section-header">
-          <FontAwesomeIcon className="cart-icon" icon={faCartShopping} />
+          <FontAwesomeIcon className="cart-icon" icon={faCartShopping} onClick={() => toggleSidebarOrder()} />
         </div>
       </nav>
     </header>

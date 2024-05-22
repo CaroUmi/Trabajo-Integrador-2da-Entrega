@@ -3,7 +3,7 @@ import Header from './layout/heder/Header';
 import Footer from './layout/footer/Footer';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import Contacto from './pages/contacto/Contacto';
+import Contact from './pages/contact/Contact';
 import AboutUs from './pages/about-us/AboutUs';
 import Register from './pages/register/Register';
 import AdminProduct from './pages/admin-product/AdminProduct';
@@ -15,7 +15,7 @@ import NotFound from './pages/not-found/NotFound';
 import OrderSidebar from './layout/order-sidebar/OrderSidebar';
 
 
-// Clase 45 - 1:06 min visto
+// Clase 46 - 0:35 min visto
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/contact" element={<Contacto />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
 

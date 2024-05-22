@@ -1,0 +1,32 @@
+.services-container {
+	display: flex;
+	flex-direction: column;
+	margin: 2rem;
+	padding: 1rem;
+
+	.services {
+		width: 300px;
+		display: flex;
+		margin: 20px auto;
+
+		.icon {
+			font-size: 25px;
+			margin: .5rem;
+		}
+		.services-detalle {
+			margin: .2rem;
+
+			h5 {
+				font-size: 1.25rem;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+@media screen and (width > 992px) {
+	.services-container {
+		flex-direction: row;
+	}
+}

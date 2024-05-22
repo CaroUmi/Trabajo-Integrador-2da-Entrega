@@ -1,4 +1,5 @@
 import ProductList from "../../components/product-list/ProductList";
+import Services from "../../components/services/Services";
 import { useOrder } from "../../context/OrderContext";
 
 export default function Home() {
@@ -8,11 +9,13 @@ export default function Home() {
 
   return (
     <>
-    <main className="main-container">
-      <h1>Home</h1>
+      <main className="main-container">
+        <h2 className="title-main">Productos destacados</h2>
 
-      <ProductList />
+        <ProductList />
       </main>
+
+      <Services />
     </>
   );
 }

@@ -1,11 +1,14 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useOrder } from "../../context/OrderContext";
 import "./OrderSidebar.css";
+// import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 export default function OrderSidebar() {
-	const { order, total } = useOrder();
+	const { order, total, handleChangeQuantity, removeItem, sidebarToggle } = useOrder();
 
 	return (
-		<div className="order-wrapper active">
+		<div className={`order-wrapper ${ sidebarToggle ? 'active' : "" }`}>
 			<div className="list-container">
 				<h2>Orden actual:</h2>
 				<ul className="order-list">
@@ -14,9 +17,20 @@ export default function OrderSidebar() {
 							return (
 								<li className="order-item" key={product.id}>
 									<img className="order-image" src="https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png" alt="" />
+									<div className="order-item-name" title={product.name} >
 									{product.name}
+									</div>
+									<div className="order-quantity order-quantity-input">
+										<input type="number" value={product.quantity} onChange={(evt) => handleChangeQuantity(product.id, evt.target.value)} min={1} />
+									</div>
 									<div className="order-price">
-										{product.price}
+										$ {product.price}
+									</div>
+									<div className="order-subtotal">
+										$ {product.price * product.quantity}
+									</div>
+									<div className="order-action">
+										<FontAwesomeIcon icon={faTrashCan} title="Eliminar producto" onClick={() => removeItem(product.id)} />
 									</div>
 								</li>
 							);
@@ -25,7 +39,6 @@ export default function OrderSidebar() {
 				</ul>
 
 			</div>
-
 			<div className="order-finish">
 				<div className="total">
 					<div className="total-count">Items: 20</div>

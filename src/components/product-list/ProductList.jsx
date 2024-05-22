@@ -26,8 +26,7 @@ export default function ProductList() {
 
   return (
     <div>
-      <h2>LISTA DE PRODUCTOS</h2>
-
+      
       <div className="card-container">
         {
           products.map((prod) => (
