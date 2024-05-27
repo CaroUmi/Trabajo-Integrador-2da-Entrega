@@ -46,9 +46,6 @@
 }
 
 /*  ?==================== #ESTILOS GENERALES ====================  */
-/* html {
-	font-size: 13px;
-} */
 
 * {
 	margin: 0;
@@ -123,7 +120,12 @@ ul li {
 }
 
 /* ---------- INPUT ---------- */
-input {
+.input-group {
+	display: flex;
+	flex-direction: column;
+}
+input,
+select {
 	width: 100%;
 	padding: .5rem .5rem;
 	margin: .2rem 0;
@@ -134,13 +136,141 @@ input {
 input:focus {
 	outline: none;
 }
+ 
+.input-error {
+	font-size: 10px;
+	color: red
+}
 
 /*---------------------- termina estilos generales ----------------------- */
 
-/* .main-container {
+.main-container {
   display: flex;
   flex-direction: column;
   flex: 1;
   max-width: 1280px;  
   margin: 0 auto;
-} */
+}
+
+/* --------------------- ESTILOS ADMIN PRODUCT --------------------- */
+.admin-container {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	margin: 3rem 1rem;
+}
+
+.admin-form {
+	max-width: 300px;
+	
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: .3rem;
+
+		h2 {
+			padding-bottom: .8rem;
+		}
+	}
+
+}
+
+.container-table {
+	max-width: 1080px;
+	width: 100vw;
+
+}
+.main-admin-product {
+	background-color: var(--color-blanco);
+	padding: 2rem;
+
+	text-align: center;
+	overflow: hidden;
+	
+}
+
+.table-container {
+	overflow-x: scroll;
+}
+
+.tb-product {
+	width: 100%;
+	margin: 2rem auto;
+	border-collapse: collapse;
+	max-width: 900px;
+
+	th {
+		padding: .75rem;
+		color: var(--color-p-oscuro);
+		background-color: var(--color-gris-bg);
+		border: 2px solid var(--color-blanco);
+		text-transform: uppercase;
+	}
+
+	td {
+		color: var(--color-p-claro);
+		font-weight: 500;
+		border-bottom: 2px solid var(--color-gris-bg-footer);
+		padding: .5rem;
+	}
+
+	.td-image {
+		text-align: center;
+
+		.img-table {
+			width: 60px;
+			height: 60px;
+			object-fit: cover;
+		}
+	}
+
+	.td-description {
+		text-align: start;
+	}
+
+	.td-price {
+		text-align: center;
+	}
+
+	.td-action {
+		text-align: center;
+
+		button {
+			background-color: transparent;
+			border: none;
+
+			&:hover {
+				cursor: pointer;
+			}
+			i {
+				font-size: 1.2rem;
+				margin: .2rem;
+			}
+		}
+
+		.bt-edit {
+			color: blue;
+		}
+
+		.bt-remove {
+			color: red;
+		}
+	}
+}
+
+/*  !==================== #MEDIAS QUERY ====================  */
+
+@media screen and (width > 992px) {
+	
+	/* ?==================== #PAGE LISTA DE PRODUCT pantallas grandes ====================  */
+
+	.container-table {
+		width: 980px;
+	}
+	.tb-product td {
+		font-size: 14px;
+	}
+}
