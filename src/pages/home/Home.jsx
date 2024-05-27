@@ -1,28 +1,21 @@
-import { NavLink } from "react-router-dom";
+import ProductList from "../../components/product-list/ProductList";
+import Services from "../../components/services/Services";
+import { useOrder } from "../../context/OrderContext";
 
 export default function Home() {
+
+  const { order } = useOrder()
+  console.log(order)
+
   return (
     <>
-      <h1>Home</h1>
+      <main className="main-container">
+        <h2 className="title-main">Productos destacados</h2>
 
-      <div className="card">
-        Producto 1
-        <NavLink to="/product-detail/1" >
-          ver más...
-          </NavLink>
-      </div>
-      <div className="card">
-        Producto 2
-        <NavLink to="/product-detail/2" >
-          ver más...
-          </NavLink>
-      </div>
-      <div className="card">
-        Producto 3
-        <NavLink to="/product-detail/3" >
-          ver más...
-          </NavLink>
-      </div>
+        <ProductList />
+      </main>
+
+      <Services />
     </>
   );
 }

@@ -1,4 +1,4 @@
-header {
+/* header {
   background-color: royalblue;
 
   .header-nav {
@@ -19,4 +19,162 @@ header {
       }
     }
   }
+} */
+
+.main-header {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-gris-bg);
+  z-index: 3;
 }
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.navbar {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.logo {
+  width: 150px;
+}
+
+.container-burger {
+  display: flex;
+  align-items: center;
+}
+
+.icon-burger {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.nav-checkbox:checked+.nav-list {
+  height: calc(100vh - 60px);
+}
+
+.nav-checkbox {
+  display: none;
+}
+
+.nav-list {
+  width: 100%;
+  background-color: var(--color-gris-bg);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  transition: all .3s;
+}
+
+.nav-item {
+
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-p-oscuro);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    background-color: var(--color-rosa);
+    height: 3px;
+    width: 0;
+    transition: all .3s;
+  }
+}
+
+.nav-item:hover {
+  color: var(--color-rosa);
+
+  &::before {
+    width: 50px;
+  }
+}
+
+.user-data {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+
+  .user-img {
+    width: 45px;
+    margin: 0 auto;
+  }
+}
+
+.cart-icon {
+  font-size: 1.2rem;
+  color: var(--color-p-oscuro);
+  margin-left: 1rem;
+}
+
+@media screen and (width > 992px) {
+  .main-header {
+    height: auto;
+  }
+
+  .icon-burger {
+    display: none;
+  }
+
+  .nav-list {
+    position: static;
+    width: auto;
+    height: 100%;
+    margin: auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+    transition: none;
+
+    .nav-item a {
+      font-size: 1rem;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 2.5rem;
+        background-color: var(--color-rosa);
+        height: 3px;
+        width: 0;
+        transition: all .3s;
+      }
+    }
+
+    .nav-item a:hover {
+      &::before {
+        width: 50px;
+      }
+    }
+
+    .user-data {
+      flex-direction: row;
+      align-items: center;
+      margin: .5rem 0;
+
+      .user-name {
+        display: none;
+      }
+    }
+  }

@@ -2,7 +2,7 @@ import "./Login.css";
 
 export default function Login() {
   return (
-    <div className="login-container">
+    <div className="main-container login-container">
       <div className="wave"></div>
       <div className="wave"></div>
       <div className="wave"></div>

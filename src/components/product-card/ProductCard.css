@@ -1,0 +1,145 @@
+.main-container {
+	max-width: 1280px;
+	margin: 3rem auto;
+	flex-grow: 1;
+
+	.title-main {
+		text-align: center;
+		margin: 30px 0;
+	}
+	.card-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+
+		.card {
+			width: 300px;
+			font-size: 1em;
+			color: var(--color-p-oscuro);
+			border: none;
+			display: flex;
+			flex-direction: column;
+			padding: 15px;
+			background-color: var(--color-blanco);
+			.card-main {
+				position: relative;
+				overflow: hidden;
+
+				.card-img {
+					width: 100%;
+				}
+				.card-action {
+					background-color: var(--color-blanco);
+					width: 80%;
+					display: flex;
+					justify-content: center;
+					padding: 0.6em 0;
+					position: absolute;
+					bottom: 1rem;
+					left: 50%;
+					transform: translatex(-50%);
+					opacity: 1;
+
+					.icon-product {
+						color: var(--color-p-oscuro);
+						display: flex;
+						justify-content: center;
+						flex-grow: 1;
+						&:hover {
+							color: var(--color-rosa);
+						}
+					}
+
+					.ico-central {
+						border-left: 2px solid var(--color-p-oscuro);
+						border-right: 2px solid var(--color-p-oscuro);
+					}
+				}
+			}
+
+			.card-info {
+				padding: 0.3rem 0;
+
+				.product-info {
+					display: flex;
+					justify-content: space-between;
+					align-items: baseline;
+					padding: 0.2rem 0;
+
+					.name-product {
+						font-family: var(--fuente-secundaria);
+						font-size: 18px;
+						font-weight: 700;
+						margin-bottom: 0;
+						color: var(--color-p-oscuro);
+					}
+
+					.category-product {
+						font-size: 13px;
+						color: var(--color-p-claro);
+						text-align: end;
+						margin-bottom: 0;
+					}
+
+					.fecha {
+						font-size: 13px;
+						margin-bottom: 0;
+					}
+				}
+
+				.price-product,
+				.product-info .start {
+					color: var(--color-rosa);
+				}
+
+				.price-product {
+					font-weight: bold;
+					font-size: 18px;
+					margin: auto 0;
+				}
+
+				.product-info .start {
+					font-size: 13px;
+				}
+			}
+		}
+		.card:hover {
+			box-shadow: var(--box-shadow);
+		}
+	}
+}
+
+@media screen and (width > 992px) {
+
+	/* sTILOS CARD -----------------------------------------*/
+	.card-action {
+		bottom: -3rem !important;
+		transition: all .5s;
+	}
+
+	.card:hover {
+		.card-action {
+			bottom: 1rem !important;
+			transition: all .5s;
+		}
+	}
+
+	.services-container {
+		flex-direction: row;
+	}
+
+	/* ?=== RESPONSIVE FOOTER ===*/
+	.main-footer {
+		.footer {
+			max-width: 1280px;
+			margin: auto;
+			flex-direction: row;
+		}
+
+		.footer-section {
+			flex: 1;
+
+		}
+	}
+}

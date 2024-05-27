@@ -1,9 +1,9 @@
 import './App.css'
 import Header from './layout/heder/Header';
-import Home from './pages/home/Home';
 import Footer from './layout/footer/Footer';
+import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import Contacto from './pages/contacto/Contacto';
+import Contact from './pages/contact/Contact';
 import AboutUs from './pages/about-us/AboutUs';
 import Register from './pages/register/Register';
 import AdminProduct from './pages/admin-product/AdminProduct';
@@ -12,9 +12,10 @@ import ProductDetail from './pages/product-detail/ProductDetail';
 import { Route, Routes } from 'react-router-dom';
 import AdminGuard from './services/guard/AdminGuard';
 import NotFound from './pages/not-found/NotFound';
+import OrderSidebar from './layout/order-sidebar/OrderSidebar';
 
 
-// Clase 44 - 0:13 min visto
+// Clase 47 - 1:43 min visto
 
 
 function App() {
@@ -23,11 +24,12 @@ function App() {
   return (
     <>
       <Header />
+      <OrderSidebar />
       <main className="main-container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/contact" element={<Contacto />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
 
