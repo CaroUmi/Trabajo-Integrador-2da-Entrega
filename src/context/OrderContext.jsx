@@ -11,11 +11,13 @@ export const OrderProvider = ({ children }) => {
     { id: 222, name: "PS5", price: 2000, quantity: 3 },
     { id: 333, name: "Nintendo Switch", price: 5000, quantity: 2 },
   ]);
+  const [count, setCount] = useState(0);
 
   const [sidebarToggle, setSideberToggle] = useState(false);
 
   useEffect(() => {
     calularTotal();
+    calculateCount();
   }, [order])
 
   const [total, setTotal] = useState(0)
@@ -41,6 +43,13 @@ export const OrderProvider = ({ children }) => {
       totalCount += prod.price * prod.quantity
     });
     setTotal(totalCount);
+  }
+
+  //Calcula cantidad de productos en el carrito
+  function calculateCount() {
+    let count = 0;
+    order.forEach((prod) => count += prod.quantity);
+    setCount(count);
   }
 
   //funcion que maneja las cantidades de productos de order
@@ -80,7 +89,7 @@ export const OrderProvider = ({ children }) => {
   return (
     < OrderContext.Provider
       value={{
-        order, total, sidebarToggle,
+        order, total, sidebarToggle, count,
         addOrderItem, handleChangeQuantity,
         removeItem, toggleSidebarOrder
       }}>

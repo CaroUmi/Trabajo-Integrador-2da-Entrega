@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faCartPlus, faMagnifyingGlass, faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { useOrder } from "../../context/OrderContext";
+import { Link } from "react-router-dom";
 
 
 export default function ProductCard({ product }) {
@@ -12,16 +13,16 @@ export default function ProductCard({ product }) {
   return (
     <article className="card">
       <div className="card-main">
-        <a href="/pages/single-product.html" target="_blank">
+        <Link to={`/product-detail/${product.id}`}>
           <img className="card-img" src={product.image} target="_blank" alt={product.name} />
-        </a>
+        </Link>
         <div className="card-action">
           <a href="#" className="icon-product">
             <FontAwesomeIcon icon={faHeart} />
           </a>
-          <a href="/pages/single-product.html" target="_blank" className=" icon-product ico-central">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </a>
+          <Link to={`/product-detail/${product.id}`} className=" icon-product ico-central">
+            <FontAwesomeIcon icon={faMagnifyingGlass} title="Ver detalle" />
+          </Link>
           <a onClick={() => addOrderItem(product)} target="_blank" className="icon-product icon-product">
             <FontAwesomeIcon icon={faCartPlus} />
           </a>
@@ -29,9 +30,9 @@ export default function ProductCard({ product }) {
       </div>
       <div className="card-info">
         <div className="product-info">
-          <a href="pages/single-product.html" target="_blank">
+          <Link to={`/product-detail/${product.id}`}>
             <p className="name-product">{product.name}</p>
-          </a>
+          </Link>
           <div className="start">
 
             <FontAwesomeIcon icon={faStarSolid} />

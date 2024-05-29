@@ -6,7 +6,7 @@ import Banner from "../../components/banner/Banner";
 export default function Contact() {
     return (
         <>
-        <Banner />
+        <Banner titlePage="Contacto" page="Contacto" classImg="banner-contact" />
 
         <section className="main-container main-contact">
             <div className="form-contact">

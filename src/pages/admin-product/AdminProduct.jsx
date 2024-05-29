@@ -4,6 +4,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { formatTimestampToInputDate } from "../../services/utils/formatDates";
+import Banner from "../../components/banner/Banner";
 const URL = `https://6646c83f51e227f23aafcf89.mockapi.io`;
 
 
@@ -89,6 +90,8 @@ export default function AdminProduct() {
   }
 
   return (
+    <>
+    <Banner titlePage="Lista de Productos" page="Lista de Productos" classImg="banner-list-products" />
     <div className="admin-container">
       <div className="admin-form">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -168,9 +171,11 @@ export default function AdminProduct() {
           </table>
         </div>
       </div>
+
       {/* </section> */}
 
 
     </div>
+    </>
   );
 }

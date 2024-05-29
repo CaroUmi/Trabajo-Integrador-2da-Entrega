@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import "./Header.css";
 import AdminGuard from "../../services/guard/AdminGuard";
@@ -8,15 +8,16 @@ import { useOrder } from "../../context/OrderContext";
 
 export default function Header() {
   const isAdmin = true;
-  const { toggleSidebarOrder } = useOrder();
+
+  const { toggleSidebarOrder, count } = useOrder();
 
   return (
     <header className="main-header">
       <nav className="navbar">
         <div className="container-nav">
-          <NavLink to="/">
+          <Link to="/">
             <img className="logo" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/logos/logo-color.png" alt="logo de marca" />
-          </NavLink>
+          </Link>
           <label className="icon-burger" htmlFor="check-menu">
             <FontAwesomeIcon icon={faBars} />
           </label>
@@ -44,7 +45,9 @@ export default function Header() {
         </div>
         {/* </div> */}
         <div className="nav-cart section-header">
-          <FontAwesomeIcon className="cart-icon" icon={faCartShopping} onClick={() => toggleSidebarOrder()} />
+          <div className={`user-cart-container ${ count < 1 ? "" : 'show-circle'}`} data-count={count} >
+            <FontAwesomeIcon className="cart-icon" icon={faCartShopping} onClick={() => toggleSidebarOrder()} />
+          </div>          
         </div>
       </nav>
     </header>

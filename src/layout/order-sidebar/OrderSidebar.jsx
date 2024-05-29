@@ -5,7 +5,7 @@ import "./OrderSidebar.css";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 export default function OrderSidebar() {
-	const { order, total, handleChangeQuantity, removeItem, sidebarToggle } = useOrder();
+	const { order, total, handleChangeQuantity, removeItem, sidebarToggle, count } = useOrder();
 
 	return (
 		<div className={`order-wrapper ${ sidebarToggle ? 'active' : "" }`}>
@@ -21,7 +21,7 @@ export default function OrderSidebar() {
 									{product.name}
 									</div>
 									<div className="order-quantity order-quantity-input">
-										<input type="number" value={product.quantity} onChange={(evt) => handleChangeQuantity(product.id, evt.target.value)} min={1} />
+										<input type="number" value={product.quantity} onChange={(evt) => handleChangeQuantity(product.id, evt.target.valueAsNumber)} min={1} />
 									</div>
 									<div className="order-price">
 										$ {product.price}
@@ -41,7 +41,7 @@ export default function OrderSidebar() {
 			</div>
 			<div className="order-finish">
 				<div className="total">
-					<div className="total-count">Items: 20</div>
+					<div className="total-count">Items: {count}</div>
 					<div className="total-price">
 						Total $ <span>{ total }</span>
 					</div>
