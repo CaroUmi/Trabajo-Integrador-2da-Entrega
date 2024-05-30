@@ -16,7 +16,7 @@ export default function OrderSidebar() {
 						order.map((product) => {
 							return (
 								<li className="order-item" key={product.id}>
-									<img className="order-image" src={product.img} alt="" />
+									<img className="order-image" src={product.image ?? "https://www.admonfarmacia.com/img/defecto.png"} alt={`imagen de ${product.name}`} />
 									<div className="order-item-name" title={product.name} >
 									{product.name}
 									</div>

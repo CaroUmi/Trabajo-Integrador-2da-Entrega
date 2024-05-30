@@ -15,7 +15,7 @@ import NotFound from './pages/not-found/NotFound';
 import OrderSidebar from './layout/order-sidebar/OrderSidebar';
 
 
-// Clase 48 - 0:54 min visto
+// Clase 48 - 2:16 min visto
 
 
 function App() {

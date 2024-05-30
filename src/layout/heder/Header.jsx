@@ -5,14 +5,28 @@ import AdminGuard from "../../services/guard/AdminGuard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faBars } from "@fortawesome/free-solid-svg-icons"
 import { useOrder } from "../../context/OrderContext";
+import Modal from "../modal/Modal";
+import { useState } from "react";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  //cerrar modal
+  function handleClose() {
+    setIsOpen(false)
+  }
+  //abrir modal
+  function handleShow() {
+    setIsOpen(true)
+  }
+
   const isAdmin = true;
 
   const { toggleSidebarOrder, count } = useOrder();
 
   return (
-    <header className="main-header">
+    <>
+      <header className="main-header">
       <nav className="navbar">
         <div className="container-nav">
           <Link to="/">
@@ -25,7 +39,7 @@ export default function Header() {
           <ul className="nav-list">
 
             <NavLink to="/" className="nav-item">Principal</NavLink>
-            <NavLink to="/login" className="nav-item">Login</NavLink>
+            <button className="nav-item" onClick={handleShow}>Login</button>
             <NavLink to="/contact" className="nav-item">Contacto</NavLink>
             <NavLink to="/about-us" className="nav-item">Acerca de</NavLink>
             <NavLink to="/regiter" className="nav-item">Registro</NavLink>
@@ -51,5 +65,16 @@ export default function Header() {
         </div>
       </nav>
     </header>
+
+    <Modal title="Ingresar" isOpen={isOpen} handleClose={handleClose}>
+      <>
+      <h3>Elemento Children</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, laborum.</p>
+      <h3>otro titulo</h3>
+      </>
+    </Modal>
+    </>
+
+  
   )
 }

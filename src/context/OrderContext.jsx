@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
+import { json } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const OrderContext = createContext();
@@ -6,11 +7,7 @@ const OrderContext = createContext();
 export const useOrder = () => useContext(OrderContext);
 
 export const OrderProvider = ({ children }) => {
-  const [order, setOrder] = useState([
-    { id: 100, name: "XBOX", price: 1000, quantity: 1 },
-    { id: 222, name: "PS5", price: 2000, quantity: 3 },
-    { id: 333, name: "Nintendo Switch", price: 5000, quantity: 2 },
-  ]);
+  const [order, setOrder] = useState(JSON.parse(localStorage.getItem("order")) || []);
   const [count, setCount] = useState(0);
 
   const [sidebarToggle, setSideberToggle] = useState(false);
@@ -18,6 +15,7 @@ export const OrderProvider = ({ children }) => {
   useEffect(() => {
     calularTotal();
     calculateCount();
+    localStorage.setItem("order", JSON.stringify(order))
   }, [order])
 
   const [total, setTotal] = useState(0)
@@ -31,6 +29,7 @@ export const OrderProvider = ({ children }) => {
       handleChangeQuantity(product.id, product.quantity + 1)
     } else {
       producto.quantity = 1;
+
       setOrder([...order, producto]);
     }
   }
@@ -61,6 +60,7 @@ export const OrderProvider = ({ children }) => {
       return item
     })
     setOrder(updateOrder);
+    
   }
 
   //funicon para quitar producto de mi order
