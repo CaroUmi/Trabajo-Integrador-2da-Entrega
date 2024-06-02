@@ -22,7 +22,7 @@ function App() {
   // const isAdmin = false;
 
   return (
-    <>
+    <div>
       <Header />
       <OrderSidebar />
       <main className="main-container">
@@ -50,7 +50,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

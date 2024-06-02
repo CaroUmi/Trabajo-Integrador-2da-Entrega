@@ -8,7 +8,7 @@ export default function Contact() {
         <>
         <Banner titlePage="Contacto" page="Contacto" classImg="banner-contact" />
 
-        <section className="main-container main-contact">
+        <section className="container main-contact">
             <div className="form-contact">
                 <div className="data-contact">
                     <h2 className="title-main">Detalles de contacto</h2>
@@ -31,7 +31,7 @@ export default function Contact() {
                         </div>
                         <div className="input-group">
                             <label htmlFor="message">Mensaje</label>
-                            <textarea name="message" id="message" cols="30" rows="8">Déjanos tu consulta</textarea>
+                            <textarea name="message" id="message" cols="30" rows="5">Déjanos tu consulta</textarea>
                         </div>
                         <div className="input-group">
                             <button className="form-btn btn-principal" type="submit">Registar</button>
@@ -41,10 +41,10 @@ export default function Contact() {
             </div>
             <div className="map-contact">
                 <h2 className="title-main">Ubicación</h2>
-                {/* <iframe className="map"
+                <iframe className="map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11821.321449440153!2d-58.261641809579494!3d-34.72676044699484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32e6bac9ba17b%3A0x702ea30c054ba56!2sQuilmes!5e0!3m2!1ses-419!2sar!4v1707778624904!5m2!1ses-419!2sar"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"></iframe> */}
+                width="100%" height="500" allowfullscreen loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" title="Google maps"></iframe>
             </div>
         </section>
         </>

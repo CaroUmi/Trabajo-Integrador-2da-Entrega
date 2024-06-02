@@ -36,3 +36,27 @@
 		}
 	}
 }
+
+@media screen and (width > 992px) {
+
+	/*  ?==================== #PAGINA CONTACTO pantallas grandes ====================  */
+
+	.main-contact {
+		max-width: 1000px;
+		flex-direction: row !important;
+		font-size: 14px;
+
+		.form-contact {
+			flex-direction: column;
+			flex-grow: 1;
+		}
+		.map-contact {
+			flex-grow: 2;
+
+			.map {
+				width: 100%;
+			}
+		}
+	}
+}
+

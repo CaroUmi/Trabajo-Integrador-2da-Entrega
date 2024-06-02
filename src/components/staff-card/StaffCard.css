@@ -1,0 +1,59 @@
+.staff {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  .miembro {
+    max-width: 380px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-blanco);
+
+    * {
+      margin: .5rem 0;
+    }
+
+    p {
+      color: var(--color-p-claro);
+    }
+
+    &:hover {
+      box-shadow: var(--box-shadow);
+    }
+
+    .img-miembro {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 100px;
+    }
+
+    .name-miembro {
+      font-family: var(--fuente-secundaria);
+      font-weight: 600;
+    }
+
+    .puesto-miembro {
+      text-transform: uppercase;
+    }
+
+    .redes a {
+      margin: 0 .3rem;
+    }
+  }
+}
+
+@media screen and (width > 992px) {
+
+  /*  ?==================== #PAGINA ABOUT pantallas grandes====================  */
+  .staff {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .main-informe {
+    flex-direction: row;
+  }
+}

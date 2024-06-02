@@ -90,9 +90,10 @@ export default function AdminProduct() {
   }
 
   return (
-    <>
+    <div>
+
     <Banner titlePage="Lista de Productos" page="Lista de Productos" classImg="banner-list-products" />
-    <div className="admin-container">
+    <div className="container main-admin">
       <div className="admin-form">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h2>{isEditing ? 'Actualizacion de producto' : 'Alta de producto' }</h2>
@@ -176,6 +177,6 @@ export default function AdminProduct() {
 
 
     </div>
-    </>
+    </div>
   );
 }

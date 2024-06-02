@@ -1,0 +1,18 @@
+/* #carousel-banner {
+	width: 100%;
+	background-color: aquamarine;
+	padding: 1rem;
+} */
+.texto-carousel {
+	background-color: var(--color-transparencia);
+	padding: 1.5rem;
+
+	h3,
+	h5 {
+		color: var(--color-blanco);
+	}
+	p {
+		font-size: 1rem;
+		color: var(--color-blanco);
+	}
+}
