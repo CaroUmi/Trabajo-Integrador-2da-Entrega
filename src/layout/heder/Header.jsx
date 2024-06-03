@@ -28,7 +28,7 @@ export default function Header() {
             <NavLink to="/login" className="nav-item">Login</NavLink>
             <NavLink to="/contact" className="nav-item">Contacto</NavLink>
             <NavLink to="/about-us" className="nav-item">Acerca de</NavLink>
-            <NavLink to="/regiter" className="nav-item">Registro</NavLink>
+            <NavLink to="/register" className="nav-item">Registro</NavLink>
             {
               isAdmin && (
                 <AdminGuard>

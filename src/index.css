@@ -119,16 +119,23 @@ ul li {
 .btn-principal:hover {
 	background-color: var(--color-beige);
 }
+/* ---------- FORMULARIO ---------- */
+form {
+	font-size: 14px;
+	input {
+		background-color: var(--color-gris-bg);
+	}
+}
 
-/* ---------- INPUT ---------- */
 .input-group {
 	display: flex;
 	flex-direction: column;
+	margin-top: .5rem;
 }
 
 input,
 select {
-	/* width: 100%; */
+	width: 100%;
 	padding: .5rem .5rem;
 	margin: .2rem 0;
 	border: none;
@@ -143,6 +150,14 @@ input:focus {
 	font-size: 10px;
 	color: red
 }
+textarea {
+	width: 100%;
+	margin-top: .3rem;
+	padding: .5rem;
+	color: var(--color-p-claro);
+	font-family: var(--fuente-principal);
+	border-color: var(--color-p-claro);
+}
 
 /*---------------------- termina estilos generales ----------------------- */
 
@@ -153,6 +168,11 @@ input:focus {
 	flex: 1 !important;
 	/* max-width: 1280px; */
 	margin: 0 auto;
+
+	.container {
+		padding: 3rem 0;
+		
+	}
 }
 
 /* --------------------- ESTILOS ADMIN PRODUCT --------------------- */
@@ -195,7 +215,7 @@ input:focus {
 	width: 980px;
 	text-align: center;
 	overflow: hidden;
-	background-color: #c87065;
+
 
 }
 
@@ -245,42 +265,55 @@ input:focus {
 
 	.td-action {
 		text-align: center;
+		
 
 		button {
+			font-size: 1rem;
 			background-color: transparent;
 			border: none;
 
 			&:hover {
 				cursor: pointer;
 			}
-
-			i {
-				font-size: 1.2rem;
-				margin: .2rem;
-			}
 		}
 
 		.bt-edit {
 			color: blue;
+			margin-right: .3rem;
 		}
 
 		.bt-remove {
 			color: red;
+			margin-left: .3rem;
 		}
 	}
+}
+
+/* --------------------- ESTILOS LOGIN y register--------------------- */
+.login-container,
+.register-container {
+	margin: 3rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form-login,
+.form-register {
+	width: 400px;
+	max-width: 400px;
 }
 
 /*  !==================== #MEDIAS QUERY ====================  */
 
 @media screen and (width > 992px) {
-
+/* ---------- FORMULARIO ---------- */
+.form-contact {
+	flex-direction: column;
+	flex-grow: 1;
+}
 	/* ?==================== #PAGE LISTA DE PRODUCT pantallas grandes ====================  */
 
-	.main-container {
-		/* display: flex;
-		flex-direction: column;
-		flex-grow: 1; */
-	}
+
 
 	.container-table {
 		width: 900px;
@@ -293,25 +326,6 @@ input:focus {
 	.main-admin {
 		display: flex;
 	}
+	
 
-	/*  ?==================== #PAGINA ABOUT pantallas grandes====================  */
-	.container-about {
-
-		.main-about {
-			flex-direction: row;
-			max-width: 1280px;
-			position: relative;
-
-			.img-about {
-				width: 700px;
-			}
-			.text-about {
-				width: 650px;
-				position: absolute;
-				right: 1rem;
-				bottom: 50%;
-				transform: translatey(50%);
-			}
-		}
-	}
 }

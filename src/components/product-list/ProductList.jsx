@@ -16,6 +16,7 @@ export default function ProductList() {
   async function getProducts() {
     try {
       const response = await axios.get(`${URL}/products`);
+      console.log(response)
       const productsAPI = response.data;
       setProducts(productsAPI)
       // console.log(productsAPI)

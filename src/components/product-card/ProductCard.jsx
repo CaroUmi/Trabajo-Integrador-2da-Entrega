@@ -1,4 +1,5 @@
 import "./ProductCard.css";
+import { formatTimestampToInputDate } from "../../services/utils/formatDates";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faCartPlus, faMagnifyingGlass, faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
@@ -10,8 +11,11 @@ export default function ProductCard({ product }) {
 
   const { addOrderItem } = useOrder();
 
+  // console.log(product)
+  
   return (
     <article className="card">
+      
       <div className="card-main">
         <Link to={`/product-detail/${product.id}`}>
           <img className="card-img" src={product.image} target="_blank" alt={product.name} />
@@ -48,7 +52,8 @@ export default function ProductCard({ product }) {
             <a href="#">
               <p className="category-product">{product.category}</p>
             </a>
-            <p className="fecha">{product.createdAt}</p>
+            {/* <p className="fecha">{formatTimestampToInputDate(product.createdAt)}</p> */}
+            <p className="fecha">{new Date(product.createdAt).toLocaleDateString()}</p>
           </div>
         </div>
       </div>

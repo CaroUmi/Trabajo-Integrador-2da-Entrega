@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Carousel />
-      <main className="main-container">
+      <main className="container">
         <h2 className="title-main">Productos destacados</h2>
 
         <ProductList />

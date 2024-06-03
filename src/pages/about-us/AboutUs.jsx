@@ -4,10 +4,11 @@ import "./AboutUs.css"
 
 export default function AboutUs() {
   return (
-    <>
+    <div className="hola">
+    
       <Banner titlePage="Sobre Nosotros" page="Nosotros" classImg="banner-about" />
 
-      <section className="main-container container-about">
+      <section className="container container-about">
         <section className="main-about">
           <img className="img-about" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/about.jpg" alt="imagen de decoración" />
           <div className="text-about">
@@ -93,6 +94,6 @@ export default function AboutUs() {
         </section>
       </section>
 
-    </>
+    </div>
   )
 }
