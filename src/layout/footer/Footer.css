@@ -8,6 +8,11 @@
 	}
 }
 
+.footer-menu {
+	display: flex;
+	flex-direction: column;
+}
+
 .footer-section {
 	padding: 1.2rem 0;
 	line-height: 1.2rem;
@@ -38,8 +43,6 @@
 .footer-contact {
 	padding: 0.5rem 0;
 
-	
-
 	.icon-redes:hover {
 		color: var(--color-rosa);
 	}
@@ -49,18 +52,20 @@
 		width: 1rem;
 	}
 }
+
 .redes {
 
 	a {
 		margin-right: 13px;
+
 		.icon-redes {
 			font-size: 20px;
 			padding: 0 0.3rem 0 0;
 			color: var(--color-p-claro);
 		}
 	}
-	
 }
+
 .logo-footer {
 	width: 180px;
 	margin-bottom: 1rem;
@@ -88,6 +93,7 @@
 /*  !==================== #MEDIAS QUERY ====================  */
 
 @media screen and (width > 992px) {
+
 	/* ?=== RESPONSIVE FOOTER ===*/
 	.main-footer {
 		.footer {

@@ -9,7 +9,6 @@ import Swal from "sweetalert2";
 
 const URL = `https://6646c83f51e227f23aafcf89.mockapi.io`;
 
-
 export default function AdminProduct() {
   const [products, setProducts] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
@@ -21,7 +20,7 @@ export default function AdminProduct() {
     data.createdAt = new Date(data.createdAt).getTime();
     data.price = +data.price;
 
-    if (data.id) { //si data.id existe es que estoy editando
+    if (data.id) {
       updateProductData(data);
     } else {
       createProduct(data);
@@ -29,79 +28,104 @@ export default function AdminProduct() {
   }
 
   //FUNCTION QUE GUARDA DATO AL EDITARLO
-  async function updateProductData(product) {
-    
-    Swal.fire({
-      title: "Desea editar el producto?",
-      showCancelButton: true,
-      confirmButtonText: "Editar",
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Producto editado",
-          showConfirmButton: false,
-          timer: 1100
-        });
-      } 
-
-      // codigo de edicion
-
-    }); 
-
-
+  function updateProductData(product) {
     try {
-      await axios.put(`${URL}/products/${product.id}`, product)
-      getproducts();
-      setIsEditing(false);
-      reset();
+      Swal.fire({
+        title: "Desea editar el producto?",
+        showCancelButton: true,
+        confirmButtonText: "Editar",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          await axios.put(`${URL}/products/${product.id}`, product)
+          getproducts();
+          setIsEditing(false);
+          reset();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Producto editado",
+            showConfirmButton: false,
+            timer: 1100
+          });
+        }
+      });
     } catch (error) {
-      console.log(error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Hubo un error al editar el producto',
+      })
     }
   }
 
-  //RENDERIZAR USUARIOS
+  //RENDERIZAR PRODUCTOS
   async function getproducts() {
     try {
       const response = await axios.get(`${URL}/products`)
       const products = response.data;
       setProducts(products);
     } catch (error) {
-      console.log(error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Hubo un error al editar el producto',
+      })
     }
   }
 
   //FUNCION PARA INSERTAR PRODUCTO
   async function createProduct(product) {
     try {
-
-      const newProduct = await axios.post(`${URL}/products`, product);
+      await axios.post(`${URL}/products`, product);
       getproducts();
       reset();
-      console.log(newProduct);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Producto creado",
+        showConfirmButton: false,
+        timer: 1100
+      });
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Hubo un error al crear el producto',
+      })
     }
   }
 
   //FUNCION PARA DELETE DE PRODUCTO
   async function deleteProduct(id) {
     try {
-      await axios.delete(`${URL}/products/${id}`);
-      //poner sweetalert para confirmar borrado ----------------
-      getproducts();
+      Swal.fire({
+        title: "Desea eliminar el producto?",
+        showCancelButton: true,
+        confirmButtonText: "Eliminar",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          await axios.delete(`${URL}/products/${id}`);
+          getproducts();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Producto eliminado",
+            showConfirmButton: false,
+            timer: 1100
+          });
+        }
+      });
     } catch (error) {
-      console.log(error);
-      //poner sweetalert para mostrar el error ------------------
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Hubo un error al eliminar el producto',
+      })
     }
   }
 
   //FUNCION UPDATE PRODUCT (EDITAR)
   function handleEditProduct(product) {
-    console.log("Editar producto", product);
-
     setValue("id", product.id);
     setValue("image", product.image);
     setValue("name", product.name);
@@ -110,15 +134,13 @@ export default function AdminProduct() {
     setValue("price", product.price);
 
     setIsEditing(true);
-
   }
 
   return (
-    <div>
-
+    <>
       <Banner titlePage="Lista de Productos" page="Lista de Productos" classImg="banner-list-products" />
 
-      <div className="container main-admin">
+      <div className="page-container main-admin">
         <div className="admin-form">
           <form onSubmit={handleSubmit(onSubmit)} className="form-contact">
             <h2>{isEditing ? 'Actualizacion de producto' : 'Alta de producto'}</h2>
@@ -131,25 +153,27 @@ export default function AdminProduct() {
             </div>
             <div className="input-group">
               <label htmlFor="price">Precio</label>
-              <input id="price" type="number" {...register("price", { require: true, min: 1 })} />
-              {errors.name?.type == "required" && (<span className="input-error">El campo es requerido</span>)}
+              <input id="price" type="number" {...register("price", { required: true, min: 1 })} />
+              {errors.price?.type == "required" && (<span className="input-error">El campo es requerido</span>)}
+              {errors.price?.type == "min" && (<span className="input-error">El valor debe ser mayor a 0</span>)}
             </div>
             <div className="input-group">
               <label htmlFor="url">URL de imagen</label>
-              <input id="url" type="URL" {...register("image", { require: true, minLength: 5 })} />
-              {errors.name?.type == "required" && (<span className="input-error">El campo es requerido</span>)}
+              <input id="url" type="URL" {...register("image", { required: true, minLength: 5 })} />
+              {errors.url?.type == "required" && (<span className="input-error">El campo es requerido</span>)}
+              {errors.url?.type == "minLength" && (<span className="input-error">La cantidad de caracteres es invalida</span>)}
             </div>
             <div className="input-group">
               <label htmlFor="categoria">Categoría</label>
-              <select id="categoria" {...register("category")}>
+              <select id="categoria" {...register("category", { required: true })}>
                 <option value="muebles">Muebles</option>
                 <option value="decoracion">Deboración</option>
               </select>
             </div>
             <div className="input-group">
               <label htmlFor="descripcion">Descripción</label>
-              <textarea id="descripcion" type="text" rows={5} {...register("description", { require: true })} />
-              {errors.name?.type == "required" && (<span className="input-error">El campo es requerido</span>)}
+              <textarea id="descripcion" type="text" rows={5} {...register("description", { required: true })} />
+              {errors.descripcion?.type == "required" && (<span className="input-error">El campo es requerido</span>)}
             </div>
             <div className="input-group">
               <label htmlFor="createdAt">Fecha de ingreso</label>
@@ -197,6 +221,6 @@ export default function AdminProduct() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: var(--box-shadow);
 
   &.active {
     width: 400px;
@@ -32,11 +33,11 @@
     .order-list {
       list-style: none;
       margin: 0;
+      padding: 0 1rem;
 
       .order-item {
-
         display: grid;
-        grid-template-columns: 36px 1fr 50px 50px 50px 16px;
+        grid-template-columns: 36px 1fr 50px 60px 60px 16px;
         align-items: center;
         font-size: .75rem;
         padding: .25rem;
@@ -61,8 +62,7 @@
         .order-subtotal {
           font-size: .85rem;
           color: #333;
-          width: 50px;
-
+          width: 60px;
         }
 
         .order-quantity-input {
@@ -70,18 +70,20 @@
           padding: .25rem;
           text-align: center;
 
+          input {
+            font-size: .85rem;
+            background-color: var(--color-gris-bg);
+            border: none;
+          }
         }
 
         .order-quantity {
-
           margin-left: auto;
           display: flex;
           gap: .75rem;
           align-items: center;
           font-weight: bold;
           font-size: 1rem;
-
-
         }
 
         .order-action {
@@ -90,29 +92,13 @@
             cursor: pointer;
             color: red;
           }
-
-          /* .order-delete-item {
-            cursor: pointer;
-            background-color: red;
-            color: white;
-            border: none;
-            font-size: .75rem;
-            display: flex;
-            align-items: center;
-            padding: .5rem .375rem;
-            border-radius: 3px;
-          } */
         }
-
 
         &:not(:last-child) {
           border-bottom: 1px solid #dedede9e;
         }
       }
-
     }
-
-
   }
 
   .order-finish {

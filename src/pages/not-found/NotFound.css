@@ -1,8 +1,37 @@
-.not-found-container {
-  display: flex;
-  align-items: center;
+.notFound {
+  width: 100vw;
+  height: 100vh;
 
-  .not-found {
-    font-size: 10rem;
+  background-image: url(https://i.postimg.cc/FRKtY9Kr/2151008680.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .text-notFound {
+    width: 80%;
+    margin-left: 3rem;
+    padding: 2rem;
+    background-color: var(--color-transparencia);
+
+    h3 {
+      font-size: 3rem;
+    }
+
+    * {
+      color: var(--color-blanco);
+    }
+  }
+}
+
+/*  !==================== #MEDIAS QUERY ====================  */
+
+@media screen and (width > 992px) {
+  .notFound {
+
+    .text-notFound {
+      width: 40%;
+    }
   }
 }

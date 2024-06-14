@@ -67,25 +67,10 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--color-p-oscuro);
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 2.5rem;
-    background-color: var(--color-rosa);
-    height: 3px;
-    width: 0;
-    transition: all .3s;
-  }
 }
 
 .nav-item:hover {
   color: var(--color-rosa);
-
-  &::before {
-    width: 50px;
-  }
 }
 
 .nav-item.active {
@@ -107,11 +92,9 @@
   font-size: 1.2rem;
   color: var(--color-p-oscuro);
   margin-left: 1rem;
-
   position: relative;
 
   &.show-circle {
-
     &::before {
       content: attr(data-count);
       font-size: .6rem;
@@ -129,10 +112,9 @@
       height: 15px;
     }
   }
-
 }
 
-@media screen and (width > 992px) {
+@media screen and (width > 1040px) {
   .main-header {
     height: auto;
   }

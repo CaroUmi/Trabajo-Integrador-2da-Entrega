@@ -1,5 +1,4 @@
 import { NavLink, Link } from "react-router-dom";
-
 import "./Header.css";
 import AdminGuard from "../../services/guard/AdminGuard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,15 +15,14 @@ export default function Header() {
       <nav className="navbar">
         <div className="container-nav">
           <Link to="/">
-            <img className="logo" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/logos/logo-color.png" alt="logo de marca" />
+            <img className="logo" src="https://i.postimg.cc/6QMrVbWb/logo-color.png" alt="logo de marca" />
           </Link>
           <label className="icon-burger" htmlFor="check-menu">
             <FontAwesomeIcon icon={faBars} />
           </label>
           <input className="nav-checkbox" type="checkbox" id="check-menu" />
           <ul className="nav-list">
-
-            <NavLink to="/" className="nav-item">Principal</NavLink>
+            <NavLink to="/" className="nav-item">Home</NavLink>
             <NavLink to="/login" className="nav-item">Login</NavLink>
             <NavLink to="/contact" className="nav-item">Contacto</NavLink>
             <NavLink to="/about-us" className="nav-item">Acerca de</NavLink>
@@ -38,16 +36,15 @@ export default function Header() {
               )
             }
             <div className="user-data">
-              <img className="user-img" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/profile.png" alt="imagen del usuario" />
+              <img className="user-img" src="https://i.postimg.cc/4NY339cH/profile.png" alt="imagen del usuario" />
               <p className="user-name">John Doe</p>
             </div>
           </ul>
         </div>
-        {/* </div> */}
         <div className="nav-cart section-header">
-          <div className={`user-cart-container ${ count < 1 ? "" : 'show-circle'}`} data-count={count} >
+          <div className={`user-cart-container ${count < 1 ? "" : 'show-circle'}`} data-count={count} >
             <FontAwesomeIcon className="cart-icon" icon={faCartShopping} onClick={() => toggleSidebarOrder()} />
-          </div>          
+          </div>
         </div>
       </nav>
     </header>

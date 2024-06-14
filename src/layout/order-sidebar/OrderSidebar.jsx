@@ -1,14 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useOrder } from "../../context/OrderContext";
 import "./OrderSidebar.css";
-// import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 export default function OrderSidebar() {
 	const { order, total, handleChangeQuantity, removeItem, sidebarToggle, count } = useOrder();
 
 	return (
-		<div className={`order-wrapper ${ sidebarToggle ? 'active' : "" }`}>
+		<div className={`order-wrapper ${sidebarToggle ? 'active' : ""}`}>
 			<div className="list-container">
 				<h2>Orden actual:</h2>
 				<ul className="order-list">
@@ -16,9 +15,9 @@ export default function OrderSidebar() {
 						order.map((product) => {
 							return (
 								<li className="order-item" key={product.id}>
-									<img className="order-image" src={product.img} alt="" />
+									<img className="order-image" src={product.image} alt="" />
 									<div className="order-item-name" title={product.name} >
-									{product.name}
+										{product.name}
 									</div>
 									<div className="order-quantity order-quantity-input">
 										<input type="number" value={product.quantity} onChange={(evt) => handleChangeQuantity(product.id, evt.target.valueAsNumber)} min={1} />
@@ -43,14 +42,10 @@ export default function OrderSidebar() {
 				<div className="total">
 					<div className="total-count">Items: {count}</div>
 					<div className="total-price">
-						Total $ <span>{ total }</span>
+						Total $ <span>{total}</span>
 					</div>
 				</div>
 				<div className="order-purchase">
-					{/* <a onClick={() => clearCart()}>Limpiar carrito</a>
-                    <button className="btn" onClick={() => finishOrder()}>
-                        Comprar
-                    </button> */}
 				</div>
 			</div>
 		</div>

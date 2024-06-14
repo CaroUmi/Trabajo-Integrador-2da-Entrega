@@ -3,7 +3,6 @@ import "./Banner.css";
 
 export default function Banner(props) {
   return (
-    // <section className="banner-page banner-contact">
     <section className={`banner-page ${props.classImg}`}>
         <div className="main-banner-page">
             <div className="text-banner-page">

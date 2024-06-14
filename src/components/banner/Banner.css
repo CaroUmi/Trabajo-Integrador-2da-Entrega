@@ -1,4 +1,5 @@
 .banner-page {
+	width: 100%;
 	background-position: center;
 	background-size: cover;
 	height: 350px;
@@ -12,23 +13,24 @@
 		margin: 0 auto;
 
 		.text-banner-page {
-			max-width: 400px;
+			max-width: 450px;
 			background-color: var(--color-transparencia);
-			padding: 1rem 2rem;
+			padding: 1.5rem 2rem;
+		
 
 			* {
 				color: var(--color-blanco);
-				padding: .2rem 0;
 			}
 
 			.breadcrumb {
+				margin: 0;
 				a {
 					&:hover {
 						color: var(--color-rosa);
 					}
 				}
 				p {
-					margin-right: .5rem;
+					margin: 0 .5rem .5rem 0;
 				}
 			}
 		}
@@ -40,21 +42,29 @@
 }
 
 .banner-about {
-	background-image: url(https://trabajo-integrador-bootcamp.netlify.app/assets/images/banner-page-1.jpg);
+	background-image: url(https://i.postimg.cc/ZKnWyQGR/banner-page-1.jpg);
 }
 
 .banner-contact {
-	background-image: url(https://trabajo-integrador-bootcamp.netlify.app/assets/images/banner-page-2.jpg);
+	background-image: url(https://i.postimg.cc/CL2zCN04/banner-page-2.jpg);
 }
 
 .banner-list-products {
-	background-image: url(https://trabajo-integrador-bootcamp.netlify.app/assets/images/banner-page-3.jpg);
+	background-image: url(https://i.postimg.cc/CKT5XxzB/banner-page-3.jpg);
 }
 
-.banner-registro {
-	background-image: url(https://trabajo-integrador-bootcamp.netlify.app/assets/images/banner-page-4.jpg);
+.banner-register {
+	background-image: url(https://i.postimg.cc/Y98SvN8Y/banner-page-8.jpg);
 }
 
 .banner-single-product {
-	background-image: url(https://trabajo-integrador-bootcamp.netlify.app/assets/images/banner-page-5.jpg);
+	background-image: url(https://i.postimg.cc/hGLvBRdC/banner-page-5.jpg);
+}
+
+.banner-login {
+	background-image: url(https://i.postimg.cc/NFMjmyPV/banner-page-6.jpg);
+}
+
+.banner-admin-user {
+	background-image: url(https://i.postimg.cc/ZRJRYsPJ/banner-page-7.jpg);
 }

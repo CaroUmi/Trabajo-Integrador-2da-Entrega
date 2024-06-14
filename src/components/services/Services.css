@@ -1,8 +1,7 @@
 .services-container {
 	display: flex;
 	flex-direction: column;
-	margin: 2rem;
-	padding: 1rem;
+	padding: 3rem;
 
 	.services {
 		width: 300px;
@@ -23,7 +22,6 @@
 		}
 	}
 }
-
 
 @media screen and (width > 992px) {
 	.services-container {

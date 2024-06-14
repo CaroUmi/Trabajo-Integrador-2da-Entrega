@@ -6,11 +6,7 @@ const OrderContext = createContext();
 export const useOrder = () => useContext(OrderContext);
 
 export const OrderProvider = ({ children }) => {
-  const [order, setOrder] = useState([
-    { id: 100, name: "XBOX", price: 1000, quantity: 1 },
-    { id: 222, name: "PS5", price: 2000, quantity: 3 },
-    { id: 333, name: "Nintendo Switch", price: 5000, quantity: 2 },
-  ]);
+  const [order, setOrder] = useState([]);
   const [count, setCount] = useState(0);
 
   const [sidebarToggle, setSideberToggle] = useState(false);
@@ -79,7 +75,6 @@ export const OrderProvider = ({ children }) => {
       setOrder(updOrder);
     }
     })
-  
   }
 
   function toggleSidebarOrder() {

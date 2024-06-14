@@ -6,18 +6,17 @@ import { useOrder } from "../../context/OrderContext";
 export default function Home() {
 
   const { order } = useOrder()
-  console.log(order)
 
   return (
-    <div>
+    <>
       <Carousel />
-      <main className="container">
+      <main className="page-container">
         <h2 className="title-main">Productos destacados</h2>
 
         <ProductList />
       </main>
 
       <Services />
-    </div>
+    </>
   );
 }

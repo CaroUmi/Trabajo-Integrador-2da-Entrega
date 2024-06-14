@@ -5,7 +5,7 @@ import "./Carousel.css";
 export default function Carousel() {
   return (
     <>
-    <div id="carousel-banner" className="carousel slide" data-bs-ride="carousel">
+    <div id="carousel-banner" className="carousel slide w-100" data-bs-ride="carousel">
       <div className="carousel-indicators">
         <button type="button" data-bs-target="#carousel-banner" data-bs-slide-to="0" className="active" aria-current="true"
           aria-label="Slide 1"></button>
@@ -14,7 +14,7 @@ export default function Carousel() {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/slider1.jpg" className="d-block w-100" alt="..." />
+          <img src="https://i.postimg.cc/L8fQTpwC/slider1.jpg" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block texto-carousel">
             <h5>Bienvenidos a</h5>
             <h3>ABSTRAKTO</h3>
@@ -23,7 +23,7 @@ export default function Carousel() {
           </div>
         </div>
         <div className="carousel-item">
-          <img src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/slider2.jpg" className="d-block w-100" alt="..." />
+          <img src="https://i.postimg.cc/rpknZHL8/slider2.jpg" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block texto-carousel">
             <h5>Muebles</h5>
             <h3>CATALOGO 2024</h3>
@@ -32,7 +32,7 @@ export default function Carousel() {
           </div>
         </div>
         <div className="carousel-item">
-          <img src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/slider3.jpg" className="d-block w-100" alt="..." />
+          <img src="https://i.postimg.cc/nLGdy1Hq/slider3.jpg" className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block texto-carousel">
             <h3>Decoración de interiores</h3>
             <p>Transforma tu hogar con nuestro servicio de decoración de interiores, fusionando estilo y funcionalidad

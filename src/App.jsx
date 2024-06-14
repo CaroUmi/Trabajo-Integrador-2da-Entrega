@@ -14,13 +14,7 @@ import AdminGuard from './services/guard/AdminGuard';
 import NotFound from './pages/not-found/NotFound';
 import OrderSidebar from './layout/order-sidebar/OrderSidebar';
 
-
-// Clase 48 - 0:54 min visto
-
-
 function App() {
-  // const isAdmin = false;
-
   return (
     <div>
       <Header />
@@ -33,7 +27,6 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
 
-          {/* ruta con parametro (id) */}
           <Route path="/product-detail/:id" element={<ProductDetail />} />
 
           <Route path="/admin-product" element={

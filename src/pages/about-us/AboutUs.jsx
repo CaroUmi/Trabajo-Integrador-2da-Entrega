@@ -4,13 +4,11 @@ import "./AboutUs.css"
 
 export default function AboutUs() {
   return (
-    <div className="hola">
-    
+    <>
       <Banner titlePage="Sobre Nosotros" page="Nosotros" classImg="banner-about" />
-
-      <section className="container container-about">
+      <section className="page-container container-about">
         <section className="main-about">
-          <img className="img-about" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/about.jpg" alt="imagen de decoración" />
+          <img className="img-about" src="https://i.postimg.cc/kMfVGChz/about.jpg" alt="imagen de decoración" />
           <div className="text-about">
             <h2>Sobre Nosotros</h2>
             <p>Hace décadas, nació nuestra empresa con la visión de transformar hogares en espacios únicos y
@@ -85,7 +83,7 @@ export default function AboutUs() {
           </article>
           <article className="main-alumno">
             <div className="alumno">
-              <img className="img-alumno" src="https://trabajo-integrador-bootcamp.netlify.app/assets/images/foto-alumno.jpg" alt="imagen del alumno" />
+              <img className="img-alumno" src="https://i.postimg.cc/RhDVRMk0/foto-alumno.jpg" alt="imagen del alumno" />
               <h4 className="name-alumno">Carolina Umisedo</h4>
               <p className="curso-alumno">Cursante del Bootcamp Full Stack</p>
               <p className="curso-alumno">EducacionIT</p>
@@ -94,6 +92,6 @@ export default function AboutUs() {
         </section>
       </section>
 
-    </div>
+    </>
   )
 }

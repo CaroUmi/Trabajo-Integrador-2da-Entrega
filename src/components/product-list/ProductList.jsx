@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import ProductCard from "../product-card/ProductCard";
 import axios from "axios";
 import "./ProductList.css";
+import Swal from "sweetalert2";
 
 const URL = "https://6646c83f51e227f23aafcf89.mockapi.io/"
 
 export default function ProductList() {
-  //Generar un estado para nuestros productos
   const [products, setProducts] = useState([])
-  //UseEfect para hacer una peticion controlada
   useEffect(() => {
     getProducts()
   }, [])
@@ -16,18 +15,19 @@ export default function ProductList() {
   async function getProducts() {
     try {
       const response = await axios.get(`${URL}/products`);
-      console.log(response)
       const productsAPI = response.data;
       setProducts(productsAPI)
-      // console.log(productsAPI)
     } catch (error) {
-      console.log(error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Hubo un error',
+        text: 'No se pudo cargar los productos',
+      })
     }
   }
 
   return (
     <div>
-      
       <div className="card-container">
         {
           products.map((prod) => (
@@ -35,7 +35,6 @@ export default function ProductList() {
           ))
         }
       </div>
-
     </div>
   )
 }
